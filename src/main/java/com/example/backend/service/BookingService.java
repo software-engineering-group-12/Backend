@@ -12,7 +12,7 @@ public class BookingService {
 	private BookingRepository bookingRepository;
 
 	public void addBooking(Booking booking) {
-
+		System.out.println("add booking");
 	}
 
 }
