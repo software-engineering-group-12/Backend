@@ -1,32 +1,33 @@
 package com.example.backend.model;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Slot {
 
-	private LocalDateTime startTIme;
+	private Date startTime;
 
-	private LocalDateTime endTIme;
+	private Date endTime;
 
-	public Slot(LocalDateTime startTIme, LocalDateTime endTIme) {
-		this.startTIme = startTIme;
-		this.endTIme = endTIme;
+	public Slot(Date startTIme, Date endTIme) {
+		this.startTime = startTIme;
+		this.endTime = endTIme;
 	}
 
-	public LocalDateTime getStartTIme() {
-		return startTIme;
+	public Date getStartTIme() {
+		return startTime;
 	}
 
-	public void setStartTIme(LocalDateTime startTIme) {
-		this.startTIme = startTIme;
+	public void setStartTIme(Date startTIme) {
+		this.startTime = startTIme;
 	}
 
-	public LocalDateTime getEndTIme() {
-		return endTIme;
+	public Date getEndTIme() {
+		return endTime;
 	}
 
-	public void setEndTIme(LocalDateTime endTIme) {
-		this.endTIme = endTIme;
+	public void setEndTIme(Date endTIme) {
+		this.endTime = endTIme;
 	}
 
 }

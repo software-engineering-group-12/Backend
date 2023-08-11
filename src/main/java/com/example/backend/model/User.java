@@ -2,12 +2,15 @@ package com.example.backend.model;
 
 import com.google.cloud.firestore.annotation.DocumentId;
 
+import java.util.List;
+
 public class User {
 
 	@DocumentId
 	private String id;
 
 	private String name;
+
 
 	public User(String name) {
 		this.name = name;
@@ -32,4 +35,5 @@ public class User {
 	public void setId(String id) {
 		this.id = id;
 	}
+
 }

@@ -1,0 +1,10 @@
+### Send POST request with json body
+POST http://localhost:8080/booking
+Content-Type: application/json
+
+{
+  "user": "Mmqu72hrNqEc7YqiECPE",
+  "location": "kKsPY5Q5PLC6KNMzsDPs",
+  "startTime": "2023-08-09T14:00:00",
+  "endTime": "2023-08-09T15:00:00"
+}

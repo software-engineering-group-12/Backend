@@ -1,0 +1,9 @@
+### Send POST request with json body
+POST http://localhost:8080/location
+Content-Type: application/json
+
+{
+  "name": "location 1",
+  "description": "description 1",
+  "imageUrls":["img3", "img1", "img2"]
+}

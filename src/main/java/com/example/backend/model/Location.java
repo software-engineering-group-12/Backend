@@ -2,6 +2,8 @@ package com.example.backend.model;
 
 import com.google.cloud.firestore.annotation.DocumentId;
 
+import java.util.List;
+
 public class Location {
 
 	@DocumentId
@@ -11,9 +13,19 @@ public class Location {
 
 	private String description;
 
+	private List<String> imageUrls;
+
+	public Location(){}
+
 	public Location(String name, String description) {
 		this.name = name;
 		this.description = description;
+	}
+
+	public Location(String name, String description, List<String> imageUrls) {
+		this.name = name;
+		this.description = description;
+		this.imageUrls = imageUrls;
 	}
 
 	public String getId() {
@@ -38,5 +50,13 @@ public class Location {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	public List<String> getImageUrls() {
+		return imageUrls;
+	}
+
+	public void setImageUrls(List<String> imageUrls) {
+		this.imageUrls = imageUrls;
 	}
 }
