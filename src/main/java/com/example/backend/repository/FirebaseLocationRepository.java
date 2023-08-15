@@ -4,9 +4,11 @@ import com.example.backend.Utill.Constants;
 import com.example.backend.model.Location;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
+import com.google.cloud.firestore.QueryDocumentSnapshot;
 import com.google.firebase.cloud.FirestoreClient;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -32,5 +34,15 @@ public class FirebaseLocationRepository implements LocationRepository {
     @Override
     public void addLocation(Location location) {
         FirestoreClient.getFirestore().collection(Constants.LOCATION_DATABASE).add(location);
+    }
+
+    @Override
+    public List<Location> getLocations() throws ExecutionException, InterruptedException {
+        List<QueryDocumentSnapshot> documents = FirestoreClient.getFirestore().collection(Constants.LOCATION_DATABASE).get().get().getDocuments();
+        List<Location> locations = new ArrayList<>();
+        for(QueryDocumentSnapshot documentSnapshot : documents) {
+            locations.add(documentSnapshot.toObject(Location.class));
+        }
+        return locations;
     }
 }

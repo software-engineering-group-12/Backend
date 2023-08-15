@@ -7,3 +7,7 @@ Content-Type: application/json
   "description": "description 1",
   "imageUrls":["img3", "img1", "img2"]
 }
+
+### Send POST request with json body
+GET http://localhost:8080/location
+Content-Type: application/json

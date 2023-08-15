@@ -29,4 +29,8 @@ public class LocationService {
 		}
 	}
 
+	public List<Location> getLocations() throws ExecutionException, InterruptedException {
+		return locationRepository.getLocations();
+	}
+
 }

@@ -13,5 +13,7 @@ public interface LocationRepository {
 
     void addLocation(Location location);
 
+    List<Location> getLocations() throws ExecutionException, InterruptedException;
+
 
 }
