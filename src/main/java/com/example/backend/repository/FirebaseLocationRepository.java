@@ -1,6 +1,7 @@
 package com.example.backend.repository;
 
 import com.example.backend.Utill.Constants;
+import com.example.backend.dto.LocationDTO;
 import com.example.backend.model.Location;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
@@ -33,7 +34,7 @@ public class FirebaseLocationRepository implements LocationRepository {
 
     @Override
     public void addLocation(Location location) {
-        FirestoreClient.getFirestore().collection(Constants.LOCATION_DATABASE).add(location);
+        FirestoreClient.getFirestore().collection(Constants.LOCATION_DATABASE).add(LocationDTO.convertToDTO(location));
     }
 
     @Override

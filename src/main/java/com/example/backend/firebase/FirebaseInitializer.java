@@ -25,9 +25,8 @@ public class FirebaseInitializer {
 		FirebaseOptions options;
 		try {
 			options = new FirebaseOptions.Builder()
-
 					.setCredentials(GoogleCredentials.fromStream(serviceAccount))
-
+					.setStorageBucket("se-group-12.appspot.com")
 					.build();
 		}
 		catch (IOException e) {

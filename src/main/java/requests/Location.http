@@ -5,9 +5,10 @@ Content-Type: application/json
 {
   "name": "location 1",
   "description": "description 1",
-  "imageUrls":["img3", "img1", "img2"]
+  "imageUrls":["img3", "img1", "img2"],
+  "images": ["/home/wikum/Documents/CIS/3rd SEM/Software Engineering/Assigments/Group/Backend/342750387_908056253818033_7278644356208355878_n.jpg"]
 }
 
 ### Send POST request with json body
-GET http://localhost:8080/location
+GET http://localhost:8080/location?id=PSZwH6XyhoRuyD7oLLbF
 Content-Type: application/json

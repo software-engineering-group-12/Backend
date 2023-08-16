@@ -3,7 +3,6 @@ package com.example.backend.repository;
 import com.example.backend.Utill.Constants;
 import com.example.backend.model.Booking;
 import com.example.backend.model.Location;
-import com.google.cloud.Condition;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
 import com.google.firebase.cloud.FirestoreClient;
