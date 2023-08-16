@@ -24,7 +24,7 @@ public class FirebaseUserRepository implements UserRepository {
 	@Override
 	public User getUserByUserName(String userName) throws ExecutionException, InterruptedException {
 		Firestore firestore = FirestoreClient.getFirestore();
-		List<QueryDocumentSnapshot> documents = firestore.collection(Constants.USER_DATABASE).whereEqualTo("name", userName).get().get().getDocuments();
+		List<QueryDocumentSnapshot> documents = firestore.collection(Constants.USER_DATABASE).whereEqualTo("username", userName).get().get().getDocuments();
 		for (DocumentSnapshot documentSnapshot: documents) {
 			return documentSnapshot.toObject(User.class);
 		}
