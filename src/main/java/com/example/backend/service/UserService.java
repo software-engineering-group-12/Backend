@@ -22,8 +22,8 @@ public class UserService {
 		if(userRepository.getUserByUserName(user.getUsername()) != null) {
 			return ResponseEntity.badRequest().body("Username is already taken");
 		}
-		userRepository.addUser(user);
-		return ResponseEntity.ok("User added");
+		String id = userRepository.addUser(user);
+		return ResponseEntity.ok(id);
 	}
 
 	public User getUserByUserName(String userName) throws ExecutionException, InterruptedException {

@@ -52,6 +52,10 @@ public class BookingService {
 		return createBooking(booking.getUser(), booking.getLocation(), booking.getStartTime(), booking.getEndTime());
 	}
 
+	public List<Booking> getBookingByUserId(String userId) throws ExecutionException, InterruptedException {
+		 return bookingRepository.getBookingsByUserId(userId);
+	}
+
 
 	public boolean isBookingSlotAvailable(Location location, Slot slot) throws ExecutionException, InterruptedException {
 		List<Booking> locationBookings = bookingRepository.getBookingsByLocation(location);

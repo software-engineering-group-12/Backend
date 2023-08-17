@@ -3,6 +3,8 @@ package com.example.backend.repository;
 import com.example.backend.Utill.Constants;
 import com.example.backend.model.Location;
 import com.example.backend.model.User;
+import com.google.api.core.ApiFuture;
+import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
@@ -16,9 +18,10 @@ import java.util.concurrent.ExecutionException;
 public class FirebaseUserRepository implements UserRepository {
 
 	@Override
-	public void addUser(User user) {
+	public String addUser(User user) throws ExecutionException, InterruptedException {
 		Firestore fireStore = FirestoreClient.getFirestore();
-		fireStore.collection(Constants.USER_DATABASE).add(user);
+		ApiFuture<DocumentReference> add = fireStore.collection(Constants.USER_DATABASE).add(user);
+		return add.get().getId();
 	}
 
 	@Override

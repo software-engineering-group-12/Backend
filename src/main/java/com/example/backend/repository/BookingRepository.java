@@ -14,6 +14,8 @@ public interface BookingRepository {
     void addBooking(Booking booking);
 
     List<Booking> getBookingsByLocation(Location location) throws ExecutionException, InterruptedException;
+
+    List<Booking> getBookingsByUserId(String userId) throws ExecutionException, InterruptedException;
     
 
 }

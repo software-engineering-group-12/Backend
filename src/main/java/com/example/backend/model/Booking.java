@@ -2,7 +2,6 @@ package com.example.backend.model;
 
 import com.google.cloud.firestore.annotation.DocumentId;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 public class Booking {

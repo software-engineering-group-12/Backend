@@ -18,7 +18,7 @@ public class FirebaseBookingRepository implements BookingRepository {
     @Override
     public List<Booking> getBooking(List<String> bookingIds) throws ExecutionException, InterruptedException {
         Firestore firestore = FirestoreClient.getFirestore();
-        List<QueryDocumentSnapshot> queryDocumentSnapshots = firestore.collection(Constants.BOOKING_DATABASE).whereIn("id", bookingIds).get().get().getDocuments();
+        List<QueryDocumentSnapshot> queryDocumentSnapshots = firestore.collection(Constants.BOOKING_DATABASE).whereIn("user", bookingIds).get().get().getDocuments();
         List<Booking> bookings = new ArrayList<>();
         for (QueryDocumentSnapshot documentSnapshot: queryDocumentSnapshots) {
             bookings.add(documentSnapshot.toObject(Booking.class));
@@ -36,6 +36,17 @@ public class FirebaseBookingRepository implements BookingRepository {
     public List<Booking> getBookingsByLocation(Location location) throws ExecutionException, InterruptedException {
         Firestore firestore = FirestoreClient.getFirestore();
         List<QueryDocumentSnapshot> documents = firestore.collection(Constants.BOOKING_DATABASE).whereEqualTo("location", location.getId()).get().get().getDocuments();
+        List<Booking> bookings = new ArrayList<>();
+        for (QueryDocumentSnapshot documentSnapshot: documents) {
+            bookings.add(documentSnapshot.toObject(Booking.class));
+        }
+        return bookings;
+    }
+
+    @Override
+    public List<Booking> getBookingsByUserId(String userId) throws ExecutionException, InterruptedException {
+        Firestore firestore = FirestoreClient.getFirestore();
+        List<QueryDocumentSnapshot> documents = firestore.collection(Constants.BOOKING_DATABASE).whereEqualTo("user", userId).get().get().getDocuments();
         List<Booking> bookings = new ArrayList<>();
         for (QueryDocumentSnapshot documentSnapshot: documents) {
             bookings.add(documentSnapshot.toObject(Booking.class));
