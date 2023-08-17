@@ -21,9 +21,14 @@ public class UserController {
 		return userService.addUser(user);
 	}
 
-	@GetMapping()
+	@GetMapping
 	public User getUserByUserName(@RequestParam String userName) throws ExecutionException, InterruptedException {
 		return userService.getUserByUserName(userName);
+	}
+
+	@RequestMapping(value = "get", method = RequestMethod.GET)
+	public User getUserById(@RequestParam String id) throws ExecutionException, InterruptedException {
+		return userService.getUserById(id);
 	}
 
 	@RequestMapping(value = "login", method = RequestMethod.GET)
