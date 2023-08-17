@@ -29,8 +29,8 @@ public class BookingController {
     }
 
     @GetMapping
-    public List<Booking> getUserBooking(@RequestParam String userID) throws ExecutionException, InterruptedException {
-        return bookingService.getBookingByUserId(userID);
+    public List<Booking> getUserBooking(@RequestParam String userId) throws ExecutionException, InterruptedException {
+        return bookingService.getBookingByUserId(userId);
     }
 
 }

@@ -11,6 +11,6 @@ Content-Type: application/json
 
 
 ### Send POST request with json body
-GET http://localhost:8080/booking?userID=Mmqu72hrNqEc7YqiECPE
+GET http://localhost:8080/booking?userId=8rZ8BWJ8wpPIZ2ouns6T
 Content-Type: application/json
 
