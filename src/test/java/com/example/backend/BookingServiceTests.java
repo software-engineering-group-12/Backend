@@ -23,7 +23,7 @@ import java.util.concurrent.ExecutionException;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class BookingServiceTest {
+class BookingServiceTests {
 
     @Mock
     private BookingRepository bookingRepository;

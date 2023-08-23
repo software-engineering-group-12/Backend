@@ -16,7 +16,7 @@ import java.util.concurrent.ExecutionException;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class LocationServiceTest {
+class LocationServiceTests {
 
     @Mock
     private LocationRepository locationRepository;
