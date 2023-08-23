@@ -23,3 +23,7 @@ Content-Type: application/json
 GET https://se-group-12.uc.r.appspot.com/user?userName=John doe
 Content-Type: application/json
 
+### Send POST request with json body
+GET http://localhost:8080/user/login?userName=user1&password=abc
+Content-Type: application/json
+
