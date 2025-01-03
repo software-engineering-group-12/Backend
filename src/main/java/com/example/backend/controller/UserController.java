@@ -3,12 +3,13 @@ package com.example.backend.controller;
 import com.example.backend.model.User;
 import com.example.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.concurrent.ExecutionException;
 
 @RestController
+@CrossOrigin
 @RequestMapping("user")
 public class UserController {
 
@@ -16,8 +17,24 @@ public class UserController {
 	private UserService userService;
 
 	@PostMapping
-	public void addUser(@RequestBody User user) {
-		userService.addUser(user);
+	public ResponseEntity<String> addUser(@RequestBody User user) throws ExecutionException, InterruptedException {
+		return userService.addUser(user);
 	}
+
+	@GetMapping
+	public User getUserByUserName(@RequestParam String userName) throws ExecutionException, InterruptedException {
+		return userService.getUserByUserName(userName);
+	}
+
+	@RequestMapping(value = "get", method = RequestMethod.GET)
+	public User getUserById(@RequestParam String id) throws ExecutionException, InterruptedException {
+		return userService.getUserById(id);
+	}
+
+	@RequestMapping(value = "login", method = RequestMethod.GET)
+	public ResponseEntity<String> login(@RequestParam String userName, @RequestParam String password) throws ExecutionException, InterruptedException {
+		return userService.login(userName, password);
+	}
+
 
 }

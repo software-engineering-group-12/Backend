@@ -1,0 +1,29 @@
+### Send POST request with json body
+POST http://localhost:8080/user
+Content-Type: application/json
+
+{
+  "username": "user1",
+  "password": "abc",
+  "email": "email@g.com",
+  "mobileNo": "0771234561"
+
+}
+
+### Send POST request with json body
+GET http://localhost:8080/user?userName=John doe
+Content-Type: application/json
+
+
+### Send POST request with json body
+GET https://se-group-12.uc.r.appspot.com/user/login?userName=user1&password=abc
+Content-Type: application/json
+
+### Send POST request with json body
+GET https://se-group-12.uc.r.appspot.com/user?userName=John doe
+Content-Type: application/json
+
+### Send POST request with json body
+GET http://localhost:8080/user/login?userName=user1&password=abc
+Content-Type: application/json
+

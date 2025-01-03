@@ -1,0 +1,16 @@
+### Send POST request with json body
+POST http://localhost:8080/booking
+Content-Type: application/json
+
+{
+  "user": "8rZ8BWJ8wpPIZ2ouns6T",
+  "location": "00AvhkmAF0Gr6CPzWnz3",
+  "startTime": "2023-08-09T14:00",
+  "endTime": "2023-08-09T15:00"
+}
+
+
+### Send POST request with json body
+GET http://localhost:8080/booking?userId=8rZ8BWJ8wpPIZ2ouns6T
+Content-Type: application/json
+

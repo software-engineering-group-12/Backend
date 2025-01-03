@@ -2,6 +2,8 @@ package com.example.backend.model;
 
 import com.google.cloud.firestore.annotation.DocumentId;
 
+import java.util.Date;
+
 public class Booking {
 
 	@DocumentId
@@ -9,14 +11,29 @@ public class Booking {
 
 	private Slot timeSlot;
 
-	private User user;
+	private String user;
 
-	private Location location;
+	private String location;
 
-	public Booking(Slot timeSlot, User user, Location location) {
+	private Date startTime;
+
+	private Date endTime;
+
+
+	public Booking() {
+	}
+
+	public Booking(Slot timeSlot, String user, String location) {
 		this.timeSlot = timeSlot;
 		this.user = user;
 		this.location = location;
+	}
+
+	public Booking(String user, String location, Date startTime, Date endTime) {
+		this.user = user;
+		this.location = location;
+		this.startTime = startTime;
+		this.endTime = endTime;
 	}
 
 	public String getId() {
@@ -35,19 +52,35 @@ public class Booking {
 		this.timeSlot = timeSlot;
 	}
 
-	public User getUser() {
+	public String getUser() {
 		return user;
 	}
 
-	public void setUser(User user) {
+	public void setUser(String user) {
 		this.user = user;
 	}
 
-	public Location getLocation() {
+	public String getLocation() {
 		return location;
 	}
 
-	public void setLocation(Location location) {
+	public void setLocation(String location) {
 		this.location = location;
+	}
+
+	public Date getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(Date startTime) {
+		this.startTime = startTime;
+	}
+
+	public Date getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(Date endTime) {
+		this.endTime = endTime;
 	}
 }
